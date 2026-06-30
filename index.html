@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi link Shopee - Nhận mã giảm giá</title>
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container" id="appContainer">
+        <!-- Main Card -->
+        <div class="converter-card">
+            <!-- Header Banner -->
+            <div class="card-banner" id="cardBanner"></div>
+
+            <!-- Avatar Area -->
+            <div class="avatar-container">
+                <img src="default-avatar.webp" alt="Avatar" class="avatar-image" id="avatarImage">
+            </div>
+
+            <!-- Title & Info -->
+            <div class="card-content">
+                <h1 class="page-title" id="pageTitle">
+                    <span class="emoji">🍅</span> Chuyển đổi link Shopee - nhận mã giảm giá
+                </h1>
+                <p class="page-subtitle" id="pageSubtitle">
+                    Dán danh sách link hoặc dán từng ô để chuyển đổi
+                </p>
+
+                <!-- Input Box -->
+                <div class="input-section">
+                    <div class="input-header">
+                        <i class="fa-solid fa-rocket icon-rocket"></i> DÁN DANH SÁCH LINK HÀNG LOẠT (TỐI ĐA 5 LINKS)
+                    </div>
+
+                    <textarea id="linksInput"
+                        placeholder="https://s.shopee.vn/7fXrKGV1yu&#10;https://shopee.vn/product/12345/67890"
+                        rows="5"></textarea>
+
+                    <div class="input-footer">
+                        <span class="line-counter" id="lineCounter">0 / 5 links</span>
+                        <span class="warning-text" id="warningText">Tối đa 5 dòng/links!</span>
+                    </div>
+
+                    <button class="convert-btn" id="convertBtn">
+                        <span class="btn-text">CHUYỂN ĐỔI NGAY</span>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-container" id="loadingContainer" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Đang xử lý link Shopee của bạn...</p>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="results-header">
+                        <h2><i class="fa-solid fa-circle-check"></i> KẾT QUẢ CHUYỂN ĐỔI</h2>
+                        <button class="copy-all-btn" id="copyAllBtn">
+                            <i class="fa-solid fa-copy"></i> Copy Tất Cả Link
+                        </button>
+                    </div>
+
+                    <!-- Result items will be inserted here -->
+                    <div class="results-list" id="resultsList"></div>
+                </div>
+            </div>
+
+            <!-- Join Group Section (Hidden by default, shown if groupLink configured) -->
+            <div id="groupSection" class="group-card" style="display: none;">
+                <div class="group-content">
+                    <div class="group-icon">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div class="group-text-container">
+                        <h3>Cộng đồng của mình</h3>
+                        <p id="groupText">Tham gia nhóm để nhận thêm nhiều deal ngon và mã giảm giá nhé! 🥰</p>
+                    </div>
+                </div>
+                <a href="#" id="groupLinkBtn" target="_blank" class="group-btn">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Tham gia ngay
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
