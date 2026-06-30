@@ -340,16 +340,28 @@ textarea:focus {
 }
 
 /* Preview Area */
-.result-preview-img {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
+.result-preview-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 12px;
     border-bottom: 1px solid var(--border-color);
+    background-color: #f2f3f5;
+}
+
+.result-preview-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .result-preview-content {
-    padding: 12px 14px;
-    background-color: #f2f3f5;
+    flex: 1;
+    min-width: 0; /* Prevent flex overflow */
 }
 
 .result-site {
@@ -404,6 +416,29 @@ textarea:focus {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.buy-item-btn {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.buy-item-btn:hover {
+    opacity: 0.9;
+    color: white;
+    transform: translateY(-1px);
 }
 
 .copy-item-btn {
